@@ -2,9 +2,10 @@
   "name": "countries",
   "version": "1.0.0",
   "description": "A collection of the world's countries and their attributes",
-  "main": "index.js",
+  "main": ".eleventy.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "eleventy --serve",
+    "build": "eleventy"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/abhrabasak/countries/issues"
   },
-  "homepage": "https://github.com/abhrabasak/countries#readme"
+  "homepage": "https://github.com/abhrabasak/countries#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
 }
