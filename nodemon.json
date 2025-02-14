@@ -1,0 +1,4 @@
+{
+  "watch": ["./.eleventy.js"],
+  "exec": "npx eleventy --serve"
+}

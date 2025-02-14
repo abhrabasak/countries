@@ -4,7 +4,7 @@
   "description": "A collection of the world's countries and their attributes",
   "main": ".eleventy.js",
   "scripts": {
-    "dev": "eleventy --serve",
+    "dev": "nodemon",
     "build": "eleventy"
   },
   "repository": {
@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/abhrabasak/countries#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0"
+    "@11ty/eleventy": "^3.0.0",
+    "nodemon": "^3.1.9"
   }
 }
