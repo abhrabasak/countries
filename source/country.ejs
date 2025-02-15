@@ -1,0 +1,14 @@
+---
+layout: base.njk
+pagination:
+  data: countries
+  size: 1
+  alias: country
+permalink: "<%= country.cca3 %>.html"
+---
+
+<h1><%= country.name.common %></h1>
+
+<p><strong>Capital:</strong> <%= country.capital %></p>
+<p><strong>Subregion:</strong> <%= country.subregion %></p>
+<p><strong>Region:</strong> <%= country.region %></p>

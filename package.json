@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A collection of the world's countries and their attributes",
   "main": ".eleventy.js",
+  "type": "module",
   "scripts": {
     "start": "npm-run-all -p dev:*",
     "dev": "nodemon",
@@ -34,6 +35,7 @@
     "npm-run-all": "^4.1.5"
   },
   "dependencies": {
+    "@11ty/eleventy-plugin-ejs": "^1.0.0",
     "@tailwindcss/cli": "^4.0.6",
     "@tailwindcss/postcss": "^4.0.6",
     "autoprefixer": "^10.4.20",

@@ -1,10 +1,9 @@
-const inspect = require("util").inspect;
+import ejsPlugin from "@11ty/eleventy-plugin-ejs";
 
-module.exports = (ec) => {
+export default (ec) => {
+  ec.addPlugin(ejsPlugin);
   // ec.addPassthroughCopy("source/styles.css");
   // ec.on("beforeBuild", copyData);
-  ec.addFilter("debug", (c) => `<pre>${inspect(c)}</pre>`);
-  ec.addFilter("lookup", (obj, key) => obj[key.toLowerCase()]);
 
   return {
     dir: {
