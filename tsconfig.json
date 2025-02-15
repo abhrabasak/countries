@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "target": "ESNext",
+    "moduleResolution": "nodenext",
+    "skipLibCheck": true
+  },
+  "exclude": ["node_modules", "webapp"]
+}
