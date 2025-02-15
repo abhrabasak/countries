@@ -1,13 +1,11 @@
-module.exports = function (eleventyConfig) {
-  // Passthrough copy for any static assets (if needed)
-  // eleventyConfig.addPassthroughCopy("source/assets");
+const inspect = require("util").inspect;
 
-  // Add a filter for formatting dates (if needed)
-  // eleventyConfig.addFilter("date", function(date) {
-  //     return new Date(date).toLocaleDateString();
-  // });
+module.exports = (ec) => {
+  // ec.addPassthroughCopy("source/styles.css");
+  // ec.on("beforeBuild", copyData);
+  ec.addFilter("debug", (c) => `<pre>${inspect(c)}</pre>`);
+  ec.addFilter("lookup", (obj, key) => obj[key.toLowerCase()]);
 
-  // Set the template formats
   return {
     dir: {
       input: "source",

@@ -4,8 +4,13 @@
   "description": "A collection of the world's countries and their attributes",
   "main": ".eleventy.js",
   "scripts": {
+    "start": "npm-run-all -p dev:*",
     "dev": "nodemon",
-    "build": "eleventy"
+    "build": "eleventy",
+    "dev:11ty": "eleventy --serve",
+    "dev:css": "npx @tailwindcss/cli -i source/styles.css -o webapp/styles.css --watch --postcss",
+    "build:11ty": "eleventy",
+    "build:css": "npx @tailwindcss/cli -i source/styles.css -o webapp/styles.css --postcss"
   },
   "repository": {
     "type": "git",
@@ -25,6 +30,14 @@
   "homepage": "https://github.com/abhrabasak/countries#readme",
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
-    "nodemon": "^3.1.9"
+    "nodemon": "^3.1.9",
+    "npm-run-all": "^4.1.5"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.0.6",
+    "@tailwindcss/postcss": "^4.0.6",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.2",
+    "tailwindcss": "^4.0.6"
   }
 }
