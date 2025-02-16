@@ -25,5 +25,6 @@ const svgs = (dir) =>
       return a;
     }, {});
 
-const srcPath = "countries-data/data";
+// https://github.com/lipis/flag-icons
+const srcPath = "node_modules/flag-icons/flags/4x3";
 export default () => svgs(path.join(process.cwd(), srcPath));
