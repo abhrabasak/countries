@@ -5,13 +5,13 @@
   "main": ".eleventy.js",
   "type": "module",
   "scripts": {
-    "start": "npm-run-all -p dev dev:css",
-    "dev": "nodemon",
-    "build": "eleventy",
-    "dev:11ty": "npx eleventy --config=.eleventy.ts --serve --incremental",
-    "dev:css": "npx @tailwindcss/cli -i source/styles.css -o webapp/styles.css --watch --postcss",
-    "build:11ty": "npx eleventy --config=.eleventy.ts",
-    "build:css": "npx @tailwindcss/cli -i source/styles.css -o webapp/styles.css --postcss"
+    "start": "nodemon",
+    "dev": "npx npm-run-all dev-styles dev-site",
+    "dev-styles": "npx @tailwindcss/cli -i source/styles.css -o webapp/styles.css --watch --postcss",
+    "dev-site": "npx eleventy --config=.eleventy.ts --serve --incremental",
+    "build": "npx npm-run-all build-styles build-site",
+    "build-styles": "npx @tailwindcss/cli -i source/styles.css -o webapp/styles.css --postcss",
+    "build-site": "npx eleventy --config=.eleventy.ts"
   },
   "repository": {
     "type": "git",

@@ -9,5 +9,6 @@
     "skipLibCheck": true,
     "noEmit": true
   },
-  "exclude": ["node_modules", "webapp"]
+  "exclude": ["node_modules", "webapp"],
+  "include": ["source/*.ts", ".eleventy.ts"]
 }

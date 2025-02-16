@@ -1,4 +1,4 @@
 {
   "watch": ["./.eleventy.ts"],
-  "exec": "npx eleventy --config=.eleventy.ts --serve --incremental"
+  "exec": "npm run dev"
 }
