@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import { DOMParser, XMLSerializer } from "xmldom";
 
+// TODO: Migrate to https://svgo.dev/
 const processSvg = (originalSvg, width) => {
   const doc = new DOMParser().parseFromString(originalSvg, "image/svg+xml");
   const svg = doc.documentElement;

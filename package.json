@@ -39,6 +39,7 @@
     "@tailwindcss/cli": "^4.0.6",
     "@tailwindcss/postcss": "^4.0.6",
     "autoprefixer": "^10.4.20",
+    "circle-flags": "github:HatScripts/circle-flags",
     "flag-icons": "^7.3.2",
     "postcss": "^8.5.2",
     "tailwindcss": "^4.0.6",
