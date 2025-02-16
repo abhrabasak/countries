@@ -9,6 +9,68 @@ permalink: "<%= country.cca3 %>.html"
 
 <h1><%= country.name.common %></h1>
 
-<p><strong>Capital:</strong> <%= country.capital %></p>
-<p><strong>Subregion:</strong> <%= country.subregion %></p>
-<p><strong>Region:</strong> <%= country.region %></p>
+<section class="flex flex-wrap gap-[10px]">
+  <article class="w-[300px]">
+    <h2>Flag</h2>
+    <div><%- flags[country.cca2.toLowerCase()] %></div>
+  </article>
+
+  <article class="w-[300px]">
+    <h2>Names</h2>
+    <p>
+      <strong>Official Name:</strong> <%= country.name?.official ?? "Unknown" %>
+    </p>
+    <p>
+      <strong>Native Name:</strong>
+      <%= Object.values(country.name?.native)[0]?.official ?? "Unknown" %>
+    </p>
+  </article>
+
+  <article class="w-[300px]">
+    <h2>Codes</h2>
+    <p><strong>Alpha-2 Code:</strong> <%= country.cca2 %></p>
+    <p><strong>Alpha-3 Code:</strong> <%= country.cca3 %></p>
+    <p><strong>Numeric Code:</strong> <%= country.ccn3 %></p>
+    <p><strong>Top Level Domain:</strong> <%= country.tld %></p>
+    <p>
+      <strong>International Code:</strong> <%= country.idd.root +
+      country.idd.suffixes[0] %>
+    </p>
+    <% const entries = Object.entries(country.currencies) %> <% if
+    (entries.length > 0) { %>
+    <p>
+      <strong>Currency:</strong> <%= entries[0][0] %> [<%= entries[0][1].name
+      %>]
+    </p>
+    <% } %>
+  </article>
+
+  <article class="w-[300px]">
+    <h2>Geography</h2>
+    <p><strong>Region:</strong> <%= country.region %></p>
+    <p><strong>Subregion:</strong> <%= country.subregion %></p>
+    <p><strong>Capital:</strong> <%= country.capital %></p>
+    <p><strong>Area:</strong> <%= country.area %> km²</p>
+    <p><strong>Demonym:</strong> <%= country.demonyms.eng.m %></p>
+    <p>
+      <strong>Borders:</strong>
+      <% country.borders.forEach((b) => { %>
+      <a href="<%= b %>"><%= b %></a>
+      <% }) %>
+    </p>
+    <p>
+      <strong>Map:</strong>
+      <a
+        href="http://www.openstreetmap.org/#map=5/<%= country.latlng[0] %>/<%= country.latlng[1] %>"
+        >OpenStreetMap</a
+      >
+    </p>
+  </article>
+
+  <article class="w-[300px]">
+    <h2>Languages</h2>
+    <% Object.entries(country.languages).forEach(([k, v]) => { %>
+    <p><%= k.toUpperCase() %> [<%= v %>]</p>
+    <% }) %>
+  </article>
+</section>
