@@ -4,7 +4,9 @@ pagination:
   data: countries
   size: 1
   alias: country
-permalink: "<%= country.cca3 %>.html"
+permalink: "<%= country.cca3 %>.ejs.html"
+eleventyComputed:
+  title: "<%= country.cca3 %> | <%= country.name.common %>"
 ---
 
 <h1><%= country.name.common %></h1>
