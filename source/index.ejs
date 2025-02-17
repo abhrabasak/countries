@@ -3,16 +3,17 @@ layout: base.njk
 title: Countries List
 ---
 
-<h1>Countries List</h1>
-<section class="flex flex-wrap gap-[10px]">
+<h1 class="font-bold text-4xl text-center p-[10px]">Countries</h1>
+<section class="flex flex-wrap justify-center">
   <% countries.forEach(c => { %>
   <div
-    class="grid grid-cols-[1fr 2fr] grid-rows-[1fr] max-w-[200px] outline outline-solid outline-red-100 p-[15px]"
+    class="grid grid-cols-[1fr 2fr] grid-rows-[1fr] w-1/6 p-[10px]"
   >
     <div class="no-underline text-center">
-      <a href="<%= c.cca3 %>"><%= c.name.common %></a> <%= c.cca3 %>
+      <a href="<%= c.cca3 %>" class="w-20 text-emerald-700"><%= c.name.common %></a>
+      <span class="text-gray-600">(<%= c.cca3 %>)</span>
     </div>
-    <div><%- flags[c.cca2.toLowerCase()] %></div>
+    <div class="flex justify-center"><%- flags[c.cca2.toLowerCase()] %></div>
   </div>
   <% }) %>
 </section>
